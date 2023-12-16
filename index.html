@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+*{
+margin:0;
+padding:0;
+ overflow-x: hidden;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color:#c7c6c3;
+}
+ 
+.content {
+  flex: 1 0 auto;
+  /* Additional styles for your content */
+}
+.footer {
+  flex-shrink: 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  /* Additional styles for your footer */
+}
+header{
+font-family: "Arial", sans-serif;
+color:#6da2f2;
+display:flex;
+height:60px;
+border-bottom: 7px solid #f2f0f0;
+background-color:white;
+font-size:25px;
+justify-content:space-between;
+}
+.intro{
+display:flex;
+}
+.about{
+margin:10px;
+}
+.home{
+margin:10px;
+}
+.actions{
+display:flex;
+ 
+margin:10px;
+}
+.login{
+margin-right:20px;
+}
+.register{
+margin-right:5px;
+}
+.search{
+ border: solid 5px #f2f0f0;
+ padding:5px;
+ width:auto;
+  border-radius: 15px;
+margin-bottom:30px;
+text-align:center;
+}
+.text{
+  width:30%;
+  border: none; 
+  border-bottom: 2px solid #656566; 
+  margin-bottom:20px;
+}
+.text::placeholder{
+text-align:center;
+font-size: 14px;
+
+}
+.search-button {
+  padding: 8px 18px;
+  background-color:red;
+  
+  color:white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.foot{
+
+display:flex;
+justify-content:center;
+margin-bottom:30px;
+}
+.code{
+
+
+ border: solid 5px #edd8ed;
+  border-radius: 15px;
+width:auto;
+padding:0px;
+text-align:center;
+ 
+}
+.inner-border {
+  padding: 20px; 
+  box-shadow: inset 0 0 0 5px white; 
+  border-radius:10px;
+   background-image: linear-gradient(to right,#edd8ed, #e4f7c6);
+
+}
+.get-button{
+margin:0;
+}
+.input-with-button {
+  display: flex;
+  align-items: center;
+  
+}
+
+.link {
+  padding: 8px;
+  border: 1px solid #ccc;
+border-right:none;
+  border-radius: 4px 0 0 4px;
+
+}
+.get-button {
+  
+  background-color:#c8f7d0;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-left:none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.link-without-underline {
+text-decoration: none;
+}
+.scroll-container {
+  width: 100%;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.scroll-content {
+  display: inline-block;
+  margin-left:30px;
+}
+.scroll-container::-webkit-scrollbar {
+  display: none;
+}
+
+
+.scroll-container {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scroll-item {
+  border-radius:10px;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+  margin: 2px;
+  background-color: #ccc;
+  text-align: center;
+  line-height: 200px;
+  font-size: 24px;
+}
+.scroll-container {
+    scroll-snap-type: x mandatory;
+    overflow-x: scroll;
+}
+
+
+.most{
+display:flex;
+justify-content:center;
+margin-left:200px;
+margin-right:200px;
+width=100%;
+height:250px;
+}
+.most-bg{
+background-color:white;
+margin:0 80px;
+}
+.most-product{
+margin-right:10px;
+}
+.most-searched{
+margin-top:0;
+text-align:center;
+ background: linear-gradient(to right, #d472db, #3722bd);
+      -webkit-background-clip: text;
+      color: transparent;
+}
+foote{
+display:flex;
+justify-content:center;
+margin-left:200px;
+margin-right:200px;
+}
+.product-guide{
+ position: relative;
+background-color:yellow;
+height:300px;
+width:300px;
+margin-right:10px;
+}
+.travel-guide{
+position: relative;
+background-color:yellow;
+height:300px;
+width:300px;
+margin-left:10px;
+}
+div.relative {
+  position: relative;
+  width: 400px;
+  height: 200px;
+  
+} 
+
+div.absolute {
+  background-color:blue;
+  position: absolute;
+  top: 80px;
+  right: 0;
+  width: 200px;
+  height: 100px;
+  border: 3px solid white;
+}
+div.a {
+  background-color:yellow;
+  position: absolute;
+  top: 80px;
+  left: 0;
+  width: 200px;
+  height: 100px;
+  border: 3px solid white;
+}
+div.b {
+  background-color:green;
+  position: absolute;
+  top: 10px;
+  left: 100px;
+  width: 200px;
+  height: 100px;
+  border: 3px solid white;
+}
+ .block {
+      width: 100%;
+     border-radius:20px;
+      
+      padding: 20px;
+      
+        position: relative;
+      vertical-align: top;
+      box-sizing: border-box;
+    }
+.block:nth-child(1) {
+      background-color:#2b2d30;
+      margin:40px 0;
+    }
+    .block:nth-child(2) {
+      
+     background-image: linear-gradient(to bottom,#ff3355, #2b45d9);
+    border-radius: 20px 20px 0 0;
+    border-bottom: 20px solid #ff3355;
+      
+    }
+
+   
+.bottom-text {
+      background-color:#ed2b72;
+      margin:0 10%;
+      border-radius:10px;
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      right: 0;
+      text-align: center; 
+      color: white;
+      
+    }
+.img{
+  height :100px;
+}.benifits{
+display:flex;
+padding:0 10%;
+justify-content:space-between;
+}
+.icon{
+  word-wrap: break-word;
+ height:200px;
+ width:20%;
+background-color:white;
+}
+.styled {
+  border: 0;
+  line-height: 2.5;
+  padding: 0 30px;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  border-radius: 10px;
+  background-color: rgba(220, 0, 0, 1);
+  background-image: linear-gradient(
+    to top left,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2) 30%,
+    rgba(0, 0, 0, 0)
+  );
+  box-shadow:
+    inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+    inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+}
+
+.styled:hover {
+  background-color: rgba(255, 0, 0, 1);
+}
+
+.styled:active {
+  box-shadow:
+    inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+    inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+.f{
+ border-radius:0;
+      background-color: #730d32;
+      color:white;
+      display : flex;
+      justify-content:space-between;
+      border-top:2px solid white;
+
+
+}
+.fl{
+ 
+text-decoration:none;
+color:white;
+opacity: 0.5;
+}
+.one{
+margin: 0PX 10px;
+      padding: 0px;
+ background-color:grey;
+
+}
+.two{
+ font-family: Arial, sans-serif;
+      margin: 10PX 10px;
+      padding: 0px;
+ background-color:#f7d672;
+
+}
+
+.four{
+  font-family: Arial, sans-serif;
+      margin: 20PX 10px;
+      padding: 0px;
+ background-color:black;
+}
+.bt{
+ position: absolute;
+margin:0 40%;
+  bottom: 10px;
+      left: 0;
+      right: 0;
+}
+</style>
+</head>
+<body>
+<div class="one">
+<div class="content">
+<header>
+<div class="intro">
+
+<div class="home">
+<a href="index.html" class="link-without-underline">Home</a>
+</div>
+<div class="about">
+<a href="#" class="link-without-underline">About</a>
+</div>
+</div>
+<div class="actions">
+<div class="login">
+<a href="login.html"class="link-without-underline">Login</a>
+</div>
+<div class="register">
+<a href="register.html"class="link-without-underline">Register</a>
+</div>
+</div>
+
+</header>
+<br><br>
+<div class="search">
+<h3>Shop With</h3>
+<h1>STORECODE</h1>
+<br><br><br><br>
+<input type=text class="text"placeholder="ENTER PRODUCT CODE">
+<br>
+<button type=submit class="search-button">Search</button>
+
+</div>
+<div class="foot">
+<div class="code">
+<div class="inner-border">
+<h2>Get a code for your link</h2>
+<br><br>
+<div class=input-with-button>
+<input type=text class="link"placeholder="Place your link here">
+<button type=submit class="get-button">Get code</button>
+<br><br><br>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<br>
+<div class="two">
+ <div class="most-bg">
+<h1 class="most-searched">Most searched storecode today!<h1>
+<div class="most">
+ <div class="most-product">
+  <div class="relative">
+  <div class="absolute"></div>
+  <div class="a"></div>
+  <div class="b">
+  <h4 align="center">Product</h4>
+</div>
+  </div>
+</div>
+<div class="travel">
+ <div class="relative">
+  <div class="absolute"></div>
+  <div class="a"></div>
+  <div class="b">
+  <h4 align="center">Travel</h4>
+</div>
+  </div>
+</div>
+</div>
+</div>
+<h1 style="color: black;margin-left: 20px;">Top Influencers</h1>
+  <div class="scroll-container" id="scrollContainer">
+    <div class="scroll-content">
+      <div class="scroll-item">1</div>
+      <div class="scroll-item">2</div>
+      <div class="scroll-item">3</div>
+      <div class="scroll-item">4</div>
+      <div class="scroll-item">5</div>
+      <div class="scroll-item">6</div>
+      <div class="scroll-item">7</div>
+      <div class="scroll-item">8</div>
+      <div class="scroll-item">9</div>
+    </div>
+  </div>
+ <br><br>
+<h1 style="color: black;margin-left: 20px;">EXPLORE GUIDES</h1>
+ <foote>
+<div class="product-guide">
+<h3 align="center">Product guides<h3>
+ <button class="bt" >Explore</button>
+</div>
+<div class="travel-guide">
+<h3 align="center">Travel guides<h3>
+ <button class="bt" >Explore</button>
+</div>
+ </div>
+</foote>
+</div>
+<div class="four">
+<div class="block">
+    <h2 align="center"><span style="color: red;">1</span>
+    <span style="color: blue;">CODE</span>
+    <span style="color: green;">3</span>
+    <span style="color: orange;">BENIFITS</span></h2>
+ <div class="benifits">
+
+   <div class="icon"><h4 align="center">Benifit1</h4></div>
+   <div class="icon"><h4 align="center">Benifit2</h4></div>
+   <div class="icon"><h4 align="center">Benifit3</h4></div>
+</div>
+    
+  </div>
+
+  <div class="block">
+    <h2 style="color:white;"align="center">TESTIMONIALS</h2>
+  <h3 style="color:white;"align="center">Seek advice from those who have experiened it firsthand</h3>
+   <div class="benifits">
+   <div class="icon"><h4 align="center">Profile1</h4></div>
+   <div class="icon"><h4 align="center">Profile2</h4></div>
+   <div class="icon"><h4 align="center">Profile3</h4></div>
+</div>
+     <div class="img"></div>
+    <div class="bottom-text">
+<h2>WISH TO BE A GUIDE AT STORECODE ?
+   <button class="styled">Register</button></h2>
+</div>
+  
+  </div>
+
+  <div class="f">
+    
+    <div class="z"> 
+    <h3>Product</h3>
+    <a href="#" class="fl">Register</a><br>
+    <a href="#" class="fl">Login</a><br>
+    <a href="#" class="fl">Dashboard</a><br>
+    </div>
+    <div class="z">
+    <h3>Info</h3>
+    <a href="#" class="fl">FAQ</a><br>
+    <a href="#" class="fl">Blog</a><br>
+    <a href="#" class="fl">Support</a><br>
+    </div>
+    <div class="z">
+    <h3>Company</h3>
+    <a href="#" class="fl">About us</a><br>
+    <a href="#" class="fl">Careers</a><br>
+    <a href="#" class="fl">Contact us</a><br>
+    </div>
+  </div>
+</div>
+</body>
+</html>
